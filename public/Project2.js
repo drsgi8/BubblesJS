@@ -4,7 +4,7 @@ var socket;
 var once = true;
 
 function setup() {
-    createCanvas(1500,800);
+    createCanvas(windowWidth, windowHeight);
 
     for (var i = 0; i < 200; i++) {
         bubbles[i] = new Bubble();
@@ -57,11 +57,11 @@ function Bubble() {
     this.size = random(10, 30);
     this.velocityX = random(-6, 6);
     this.velocityY = random(-6, 6);
-    this.time = random(2, 4);
+    this.time = random(2.3, 4.5);
 
     this.update = function () {
         this.life -= this.time;
-        if (this.X < 0 || this.X > width || this.Y < 0 || this.Y > height || this.life < 20) {
+        if (this.X < 0 || this.X > width || this.Y < 0 || this.Y > height || this.life < 10) {
             this.X = mouseX;
             this.Y = mouseY;
             this.life = 210;
